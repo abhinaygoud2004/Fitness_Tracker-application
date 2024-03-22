@@ -78,8 +78,8 @@ export default function Header() {
           </div> */}
 
           <div className='flex items-center mx-5 ml-2'>
-            <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/daily-calorie-calculator'}>
-              Know Daily Calories
+            <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/track-calories'}>
+              Track Calories
             </Button>
           </div>
 

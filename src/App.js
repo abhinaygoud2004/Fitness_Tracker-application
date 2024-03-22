@@ -1,20 +1,23 @@
 
 import React, { useState } from "react";
-import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import HomeScreen from "./components/HomeScreen";
+import HomeScreen from "./components/HomeScreen";
 import { ThemeProvider } from "@material-tailwind/react";
 import Login from "./components/Login/Login";
 import { ChakraProvider, theme } from "@chakra-ui/react"
 // import HydrationReminder from "./components/HydrationReminder";
 import { Helmet } from "react-helmet";
 import SignUp from "./components/SignUp/SignUp";
+<<<<<<< HEAD
 import FitnessTracking from "./components/FitnessTracking/FitnessTracking";
 // import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
+=======
+import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
+>>>>>>> 4e5a3467989a13ec7d41e1a93fecd8e331ae9729
 // import NutritionTable from "./components/Nutrition/Nutrition";
 // import Media from "./components/Media/Media";
 // import Test from "./components/Test";
-// import Header from "./components/Header";
+import Header from "./components/Header";
 
 function App() {
 
@@ -30,7 +33,7 @@ function App() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Fitness Tracker</title>
-        <link rel="canonical" href="http://localhost:3004 " />
+        <link rel="canonical" href="http://localhost:3004" />
       </Helmet>
       <ChakraProvider theme={theme}>
         <React.StrictMode>
@@ -40,11 +43,15 @@ function App() {
               <Routes>
 
                 {/* <Route path="/" element={<HomeScreen />} />
-                <Route path="/hydration-remainder" element={<HydrationReminder />} />
-                <Route path="/daily-calorie-calculator" element={<DailyCalorieIntake />} /> */}
+                <Route path="/hydration-remainder" element={<HydrationReminder />} />*/}
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
+<<<<<<< HEAD
                 <Route path='/tracking' element={<FitnessTracking />}/>
+=======
+                <Route path='/track-calories' element={<HomeScreen />} />
+                <Route path="/daily-calorie-calculator" element={<DailyCalorieIntake />} /> 
+>>>>>>> 4e5a3467989a13ec7d41e1a93fecd8e331ae9729
                 {/* <Route path='/media' element={<Media />} />
                 <Route path='/nutrition' element={<NutritionTable />} />
                 <Route path='/test' element={<Test />} /> */}
