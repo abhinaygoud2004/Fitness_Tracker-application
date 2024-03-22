@@ -102,7 +102,7 @@ export default function Header() {
           </Flex>
         </Flex>
 
-        {/* {!localStorage.getItem('userId') || localStorage.getItem('userId') === 'undefined' && */}
+        {!localStorage.getItem('userId') || localStorage.getItem('userId') === 'undefined' &&
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
@@ -115,8 +115,8 @@ export default function Header() {
               Login
             </Button>
           </Stack>
-        {/* } */}
-        {/* {localStorage.getItem('userId') && localStorage.getItem('userId') !== 'undefined' && */}
+        }
+        {localStorage.getItem('userId') && localStorage.getItem('userId') !== 'undefined' &&
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
@@ -131,7 +131,7 @@ export default function Header() {
               Log Out
             </Button>
           </Stack>
-        {/* } */}
+        }
 
       </Flex>
 
