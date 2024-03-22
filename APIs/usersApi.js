@@ -14,7 +14,6 @@ userApp.get('/get-user/:userId',
   expressAsyncHandler(async (request, response) => {
     // Get the user ID from the URL parameters
     const userId = request.params.userId;
-
     // Get userCollectionObj
     const userCollectionObj = request.app.get("userCollectionObj");
 
@@ -26,6 +25,7 @@ userApp.get('/get-user/:userId',
       response.status(404).send({ message: "User not found" });
     } else {
       // If the user is found, return the user data
+      delete user.password;
       response.status(200).send({ message: "User data", payload: user });
     }
   })

@@ -9,6 +9,7 @@ import { ChakraProvider, theme } from "@chakra-ui/react"
 import { Helmet } from "react-helmet";
 import SignUp from "./components/SignUp/SignUp";
 import FitnessTracking from "./components/FitnessTracking/FitnessTracking";
+import Main from "./components/profile/Main";
 // import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
 import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
 import NutritionTable from "./components/Nutrition/Nutrition";
@@ -71,6 +72,7 @@ function App() {
                 <Route path='/tracking' element={<FitnessTracking />}/>
                 <Route path='/track-calories' element={<HomeScreen />} />
                 <Route path="/daily-calorie-calculator" element={<DailyCalorieIntake />} /> 
+                <Route path='/profile' element={<Main />} />
                 {/* <Route path='/media' element={<Media />} />
                 <Route path='/nutrition' element={<NutritionTable />} />
                 {/* <Route path='/media' element={<Media />} />
