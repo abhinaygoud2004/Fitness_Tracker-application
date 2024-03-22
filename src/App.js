@@ -11,7 +11,7 @@ import SignUp from "./components/SignUp/SignUp";
 import FitnessTracking from "./components/FitnessTracking/FitnessTracking";
 // import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
 import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
-// import NutritionTable from "./components/Nutrition/Nutrition";
+import NutritionTable from "./components/Nutrition/Nutrition";
 // import Media from "./components/Media/Media";
 // import Test from "./components/Test";
 import Header from "./components/Header";
@@ -68,12 +68,9 @@ function App() {
                 <Route path="/hydration-remainder" element={<HydrationReminder />} />*/}
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
-<<<<<<< HEAD
                 <Route path='/tracking' element={<FitnessTracking />}/>
-=======
                 <Route path='/track-calories' element={<HomeScreen />} />
                 <Route path="/daily-calorie-calculator" element={<DailyCalorieIntake />} /> 
->>>>>>> 4e5a3467989a13ec7d41e1a93fecd8e331ae9729
                 {/* <Route path='/media' element={<Media />} />
                 <Route path='/nutrition' element={<NutritionTable />} />
                 {/* <Route path='/media' element={<Media />} />
