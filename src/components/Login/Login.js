@@ -4,6 +4,7 @@ import { Button } from '@chakra-ui/react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import toast from "react-hot-toast";
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -33,6 +34,7 @@ function Login() {
     console.log(response.data.userId, 'uuuuuuuuuuuu')
     console.log(userId)
     if (userId) {
+      toast.success("User Login successful!");
       navigate('/')
       localStorage.setItem("token", response.data.token)
       localStorage.setItem("userId", response.data.userId)

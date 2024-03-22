@@ -9,10 +9,11 @@ import { ChakraProvider, theme } from "@chakra-ui/react"
 import { Helmet } from "react-helmet";
 import SignUp from "./components/SignUp/SignUp";
 import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
-// import NutritionTable from "./components/Nutrition/Nutrition";
+import NutritionTable from "./components/Nutrition/Nutrition";
 // import Media from "./components/Media/Media";
 // import Test from "./components/Test";
 import Header from "./components/Header";
+import { Toaster } from 'react-hot-toast'
 
 function App() {
 
@@ -27,17 +28,41 @@ function App() {
         <React.StrictMode>
           <ThemeProvider>
             <BrowserRouter>
-            <Header/>
+              <Toaster
+                position="bottom-center"
+                reverseOrder={false}
+                gutter={8}
+                containerClassName=""
+                containerStyle={{}}
+                toastOptions={{
+                  className: '',
+                  duration: 5000,
+                  style: {
+                    background: '#363636',
+                    color: '#fff',
+                  },
+
+                  // Default options for specific types
+                  success: {
+                    duration: 3000,
+                    theme: {
+                      primary: 'green',
+                      secondary: 'black',
+                    },
+                  },
+                }}
+              />
+              <Header />
               <Routes>
-                
+
                 {/* <Route path="/" element={<HomeScreen />} />
                 <Route path="/hydration-remainder" element={<HydrationReminder />} />*/}
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/track-calories' element={<HomeScreen />} />
-                <Route path="/daily-calorie-calculator" element={<DailyCalorieIntake />} /> 
-                {/* <Route path='/media' element={<Media />} />
+                <Route path="/daily-calorie-calculator" element={<DailyCalorieIntake />} />
                 <Route path='/nutrition' element={<NutritionTable />} />
+                {/* <Route path='/media' element={<Media />} />
                 <Route path='/test' element={<Test />} /> */}
 
               </Routes>

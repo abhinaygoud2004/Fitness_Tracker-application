@@ -69,13 +69,13 @@ export default function Header() {
             <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/hydration-remainder'}>
               Hydration Remainder
             </Button>
-          </div>
+          </div> */}
 
           <div className='flex items-center mx-5 ml-2'>
             <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/nutrition'}>
               Know Your Food
             </Button>
-          </div> */}
+          </div> 
 
           <div className='flex items-center mx-5 ml-2'>
             <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/track-calories'}>

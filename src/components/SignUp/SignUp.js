@@ -36,6 +36,7 @@ const SignUp = () => {
         },
       }
     );
+    toast.success("User SignUp successful!");
     navigate('/login')
   };
   let navigate = useNavigate()
