@@ -65,8 +65,7 @@ function App() {
               <Header />
               <Routes>
 
-                {/* <Route path="/" element={<HomeScreen />} />
-                <Route path="/hydration-remainder" element={<HydrationReminder />} />*/}
+                {/* <Route path="/" element={<HomePage />} /> */}
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/tracking' element={<FitnessTracking />}/>
