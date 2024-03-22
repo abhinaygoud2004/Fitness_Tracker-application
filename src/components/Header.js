@@ -55,24 +55,10 @@ export default function Header() {
           <div className='flex items-center w-[58%]' onClick={() => {
             navigate('/')
           }}>
-            <svg
-              className="inline-block fa-utensils"
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="utensils"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-              width={'31'}
-              height={'33'}
-              color='white'
-            >
-              <path
-                fill="currentColor"
-                d="M416 0C400 0 288 32 288 176V288c0 35.3 28.7 64 64 64h32V480c0 17.7 14.3 32 32 32s32-14.3 32-32V352 240 32c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7.1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7V480c0 17.7 14.3 32 32 32s32-14.3 32-32V255.6c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16V150.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8V16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"
-              ></path>
-            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width={'35'} height={'36'}
+              color='white' id="Layer_1" data-name="Layer 1" viewBox="0 0 23 23"><path d="M23,12a1,1,0,0,1-1,1H19.13a3.016,3.016,0,0,1-2.569-1.452L15.193,9.277,13.706,12.9a1,1,0,0,1-1.851-.758L13.555,8H11.616L9.552,13.032a1,1,0,0,0,.39,1.225l4.592,2.9A1,1,0,0,1,15,18v5a1,1,0,0,1-2,0V18.551l-4.126-2.6A3,3,0,0,1,7.7,12.273L9.454,8H7.236a.994.994,0,0,0-.894.552L4.895,11.447a1,1,0,0,1-1.79-.894l1.448-2.9A2.984,2.984,0,0,1,7.236,6h6.623A3.017,3.017,0,0,1,16.43,7.453l1.844,3.063A1.006,1.006,0,0,0,19.13,11H22A1,1,0,0,1,23,12ZM7.875,16.814a1,1,0,0,0-1.3.557A.994.994,0,0,1,5.646,18H3a1,1,0,0,0,0,2H5.646a2.987,2.987,0,0,0,2.786-1.886A1,1,0,0,0,7.875,16.814ZM15,5a2.5,2.5,0,1,0-2.5-2.5A2.5,2.5,0,0,0,15,5Z" /></svg>
+
 
             <h1 className='text-3xl text-white font-semibold ml-3'>
               Fitness Tracker
@@ -102,7 +88,7 @@ export default function Header() {
           </Flex>
         </Flex>
 
-        {!localStorage.getItem('userId') || localStorage.getItem('userId') === 'undefined' &&
+        {(!localStorage.getItem('userId') || localStorage.getItem('userId') === 'undefined') &&
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
