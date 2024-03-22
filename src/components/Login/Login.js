@@ -34,7 +34,6 @@ function Login() {
     console.log(userId)
     if (userId) {
       navigate('/')
-      // console.log("DODD")
       localStorage.setItem("token", response.data.token)
       localStorage.setItem("userId", response.data.userId)
     }
