@@ -73,9 +73,8 @@ function App() {
                 <Route path='/track-calories' element={<HomeScreen />} />
                 <Route path="/daily-calorie-calculator" element={<DailyCalorieIntake />} /> 
                 <Route path='/profile' element={<Main />} />
-                {/* <Route path='/media' element={<Media />} />
                 <Route path='/nutrition' element={<NutritionTable />} />
-                {/* <Route path='/media' element={<Media />} />
+               {/*  <Route path='/media' element={<Media />} />
                 <Route path='/test' element={<Test />} /> */}
 
               </Routes>
