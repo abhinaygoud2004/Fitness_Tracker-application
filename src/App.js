@@ -8,12 +8,9 @@ import { ChakraProvider, theme } from "@chakra-ui/react"
 // import HydrationReminder from "./components/HydrationReminder";
 import { Helmet } from "react-helmet";
 import SignUp from "./components/SignUp/SignUp";
-<<<<<<< HEAD
 import FitnessTracking from "./components/FitnessTracking/FitnessTracking";
 // import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
-=======
 import DailyCalorieIntake from "./components/Calculators/DailyCalorieIntake";
->>>>>>> 4e5a3467989a13ec7d41e1a93fecd8e331ae9729
 // import NutritionTable from "./components/Nutrition/Nutrition";
 // import Media from "./components/Media/Media";
 // import Test from "./components/Test";
