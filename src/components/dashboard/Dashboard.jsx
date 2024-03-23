@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Progress from "../Charts/Progress";
-import { Heading, Box, Button } from "@chakra-ui/react";
+import { Heading, Box, Button, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import RandomQuote from "../RandomQuote";
 
@@ -103,7 +103,7 @@ function Dashboard() {
     fetchUser();
   }, []);
   return (
-    <div className="container-fluid p-5 ">
+    <div className="container-fluid p-5 h-[80vh]">
       <Heading className="mb-2">Dashboard</Heading>
       <hr />
       <Box className="w-full flex justify-between">
@@ -132,6 +132,9 @@ function Dashboard() {
               <Heading textAlign={"center"} color={"red.500"}>
                 {bmi}
               </Heading>
+            )}
+            {bmi < 18.5 && bmi >= 25 && (
+              <Text>*the ideal BMI score should be 18.5 to 24.9</Text>
             )}
           </Box>
         </Box>
@@ -165,7 +168,9 @@ function Dashboard() {
           </Box>
         </Box>
       </Box>
-      <RandomQuote />
+      <Box>
+        <RandomQuote />
+      </Box>
     </div>
   );
 }

@@ -80,8 +80,7 @@ function App() {
                 <Route path="/nutrition" element={<NutritionTable />} />
                 <Route path="/exercise/:id" element={<ExerciseDetail />} />
                 <Route path="/add-entry" element={<AddEntry />} />
-                {/*  <Route path='/media' element={<Media />} />
-                <Route path='/test' element={<Test />} /> */}
+                
               </Routes>
             </BrowserRouter>
           </ThemeProvider>

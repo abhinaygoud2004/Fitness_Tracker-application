@@ -47,91 +47,93 @@ function AddEntry() {
     localStorage.setItem("entries", JSON.stringify([...entries, formData]));
   };
   return (
-    <div className="p-5">
-      <Heading>Manual Entry</Heading>
-      <div className="flex px-5">
-        <form onSubmit={handleSubmit} className="w-2/3 mt-5">
-          <VStack spacing={4} align="stretch">
-            <FormControl>
-              <FormLabel htmlFor="title">Title</FormLabel>
-              <Input
-                id="title"
-                name="title"
-                type="text"
-                value={formData.title}
-                onChange={handleChange}
-                placeholder="Title"
-              />
-            </FormControl>
-            <FormControl>
-              <FormLabel htmlFor="sport">Sport</FormLabel>
-              <Select
-                id="sport"
-                name="sport"
-                value={formData.sport}
-                onChange={handleChange}
-                placeholder="Select sport"
-              >
-                {SportOptions.map((sport, index) => (
-                  <option key={index} value={sport.value}>
-                    {sport.label}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
-            <div className="flex flex-row justify-between gap-4">
+    <div className="flex justify-center items-center h-[80vh]">
+      <div className="p-5 w-1/2">
+        <Heading>Manual Entry</Heading>
+        <div className="flex px-5">
+          <form onSubmit={handleSubmit} className="w-full mt-5">
+            <VStack spacing={4} align="stretch">
               <FormControl>
-                <FormLabel htmlFor="distance">Distance</FormLabel>
+                <FormLabel htmlFor="title">Title</FormLabel>
                 <Input
-                  id="distance"
-                  name="distance"
-                  type="number"
-                  value={formData.distance}
-                  onChange={handleChange}
-                  placeholder="Distance"
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="duration">Duration</FormLabel>
-                <Input
-                  id="duration"
-                  name="duration"
+                  id="title"
+                  name="title"
                   type="text"
-                  value={formData.duration}
+                  value={formData.title}
                   onChange={handleChange}
-                  placeholder="Duration"
-                />
-              </FormControl>
-            </div>
-            <div className="flex flex-row justify-between gap-4">
-              <FormControl>
-                <FormLabel htmlFor="date">Date</FormLabel>
-                <Input
-                  id="date"
-                  name="date"
-                  type="date"
-                  value={formData.date}
-                  onChange={handleChange}
+                  placeholder="Title"
                 />
               </FormControl>
               <FormControl>
-                <FormLabel htmlFor="time">Time</FormLabel>
-                <Input
-                  id="time"
-                  name="time"
-                  type="time"
-                  value={formData.time}
+                <FormLabel htmlFor="sport">Sport</FormLabel>
+                <Select
+                  id="sport"
+                  name="sport"
+                  value={formData.sport}
                   onChange={handleChange}
-                />
+                  placeholder="Select sport"
+                >
+                  {SportOptions.map((sport, index) => (
+                    <option key={index} value={sport.value}>
+                      {sport.label}
+                    </option>
+                  ))}
+                </Select>
               </FormControl>
-            </div>
-            <div className="flex flex-row justify-center">
-              <Button type="submit" colorScheme="blue">
-                Submit
-              </Button>
-            </div>
-          </VStack>
-        </form>
+              <div className="flex flex-row justify-between gap-4">
+                <FormControl>
+                  <FormLabel htmlFor="distance">Distance</FormLabel>
+                  <Input
+                    id="distance"
+                    name="distance"
+                    type="number"
+                    value={formData.distance}
+                    onChange={handleChange}
+                    placeholder="Distance"
+                  />
+                </FormControl>
+                <FormControl>
+                  <FormLabel htmlFor="duration">Duration</FormLabel>
+                  <Input
+                    id="duration"
+                    name="duration"
+                    type="text"
+                    value={formData.duration}
+                    onChange={handleChange}
+                    placeholder="Duration"
+                  />
+                </FormControl>
+              </div>
+              <div className="flex flex-row justify-between gap-4">
+                <FormControl>
+                  <FormLabel htmlFor="date">Date</FormLabel>
+                  <Input
+                    id="date"
+                    name="date"
+                    type="date"
+                    value={formData.date}
+                    onChange={handleChange}
+                  />
+                </FormControl>
+                <FormControl>
+                  <FormLabel htmlFor="time">Time</FormLabel>
+                  <Input
+                    id="time"
+                    name="time"
+                    type="time"
+                    value={formData.time}
+                    onChange={handleChange}
+                  />
+                </FormControl>
+              </div>
+              <div className="flex flex-row justify-center">
+                <Button type="submit" colorScheme="blue">
+                  Submit
+                </Button>
+              </div>
+            </VStack>
+          </form>
+        </div>
       </div>
     </div>
   );
