@@ -44,8 +44,7 @@ const Content = () => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-
-      <Actions />
+ 
     </Box>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Text,
   Heading,
@@ -11,11 +11,13 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  HStack,
   Input,
 } from "@chakra-ui/react";
-function Goal({ name }) {
+function Goal({ name, setCards, distance }) {
   const [goal, setGoal] = useState(3);
+  useEffect(() => {
+    distance && setGoal(distance);
+  }, [distance]);
   const [goalInput, setGoalInput] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
@@ -23,6 +25,12 @@ function Goal({ name }) {
   };
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+  const removeGoal = () => {
+    const cards = JSON.parse(localStorage.getItem("cards"));
+    const newCards = cards.filter((card) => card.title !== name);
+    localStorage.setItem("cards", JSON.stringify(newCards));
+    setCards(newCards);
   };
   return (
     <div>
@@ -148,6 +156,17 @@ function Goal({ name }) {
           >
             {"Change"}
           </Button>
+          <Button
+            h="1.75rem"
+            size="sm"
+            ml={1}
+            color={"red.500"}
+            onClick={() => {
+              removeGoal();
+            }}
+          >
+            {"Remove"}
+          </Button>
         </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
@@ -169,6 +188,15 @@ function Goal({ name }) {
             <Button
               onClick={() => {
                 setGoal(goalInput);
+                const cards = JSON.parse(localStorage.getItem("cards"));
+                const newCards = cards.map((card) => {
+                  if (card.title === name) {
+                    card.distance = goalInput;
+                  }
+                  return card;
+                });
+                setCards(newCards);
+                localStorage.setItem("cards", JSON.stringify(newCards));
                 closeModal();
               }}
             >
