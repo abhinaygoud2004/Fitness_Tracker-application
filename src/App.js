@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
+import Home from "./pages/Home";
 import { ThemeProvider } from "@material-tailwind/react";
 import Login from "./components/Login/Login";
 import { ChakraProvider, theme } from "@chakra-ui/react"
