@@ -4,6 +4,7 @@ import HomeScreen from "./components/HomeScreen";
 import { ThemeProvider } from "@material-tailwind/react";
 import Login from "./components/Login/Login";
 import { ChakraProvider, theme } from "@chakra-ui/react";
+import ExerciseDetail from "./pages/ExerciseDetail";
 // import HydrationReminder from "./components/HydrationReminder";
 import { Helmet } from "react-helmet";
 import SignUp from "./components/SignUp/SignUp";
@@ -77,6 +78,7 @@ function App() {
                 />
                 <Route path="/profile" element={<Main />} />
                 <Route path="/nutrition" element={<NutritionTable />} />
+                <Route path="/exercise/:id" element={<ExerciseDetail />} />
                 <Route path="/add-entry" element={<AddEntry />} />
                 {/*  <Route path='/media' element={<Media />} />
                 <Route path='/test' element={<Test />} /> */}
