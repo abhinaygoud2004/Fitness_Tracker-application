@@ -21,6 +21,7 @@ import { Toaster } from "react-hot-toast";
 import Dashboard from "./components/dashboard/Dashboard";
 import AddEntry from "./components/dashboard/AddEntry";
 import Recommendations from "./components/Recommendations";
+import Landing from "./components/Landing";
 
 function App() {
   const activityData = {
@@ -68,7 +69,7 @@ function App() {
               <Header />
               <Routes>
                 {/* <Route path="/" element={<HomePage />} /> */}
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/" element={<Landing />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
