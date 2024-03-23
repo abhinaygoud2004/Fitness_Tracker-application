@@ -132,6 +132,7 @@ const HomeScreen = () => {
                         <button onClick={() => {
                             setAllMeals([]);
                             setAllWorkouts([]);
+                            toast.success("Caloreis Reset Successful!")
                         }}
                             id="reset"
                             className="bg-transparent border border-[#589F3C] hover:bg-[#589F3C] hover:text-white text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -479,6 +480,7 @@ const HomeScreen = () => {
                                             onClick={() => {
                                                 setDailyCaloriesLimit(tempDailyCaloriesLimit);
                                                 setShowModal(false);
+                                                toast.success("Set Daily Calorie Limit Successful!")
                                             }}
                                         >
                                             Save
