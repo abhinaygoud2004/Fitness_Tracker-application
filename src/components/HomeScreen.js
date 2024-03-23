@@ -4,6 +4,7 @@ import { v4 as uuid } from "uuid";
 import { Button, Input, InputGroup, InputLeftAddon, } from '@chakra-ui/react';
 import { Link } from 'react-router-dom'
 import { Select } from '@chakra-ui/react'
+import toast from 'react-hot-toast';
 
 const HomeScreen = () => {
     const [showModal, setShowModal] = useState(false)
@@ -32,7 +33,7 @@ const HomeScreen = () => {
 
         console.log('Meal Name:', mealName);
         console.log('Meal Calories:', mealCalories);
-
+        toast.success("Meal Added Successfully!")
         setAllMeals([...allMeals, { mealId: uuid(), mealName: mealName, mealCalories: mealCalories }])
 
         setMealName('');
@@ -44,7 +45,7 @@ const HomeScreen = () => {
 
         console.log('Workout Name:', workoutName);
         console.log('Workout Calories:', workoutCalories);
-
+        toast.success("Workout Added Successfully!")
         setAllWorkouts([...allWorkouts, {
             workoutId: uuid(),
             workoutName: workoutName,
@@ -55,9 +56,9 @@ const HomeScreen = () => {
         }])
         setWorkoutName('');
         setWorkoutCalories('');
-        setWorkoutHeartRate();
-        setWorkoutBodyTemp();
-        setWorkoutDuration();
+        setWorkoutHeartRate('');
+        setWorkoutBodyTemp('');
+        setWorkoutDuration('');
     };
 
     useEffect(() => {

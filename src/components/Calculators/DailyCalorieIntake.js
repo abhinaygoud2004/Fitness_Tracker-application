@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { css } from '@emotion/react';
 import { Spinner } from '@chakra-ui/react';
 
@@ -10,6 +10,32 @@ const DailyCalorieIntake = () => {
     const [activityLevel, setActivityLevel] = useState('sedentary');
     const [calorieResult, setCalorieResult] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    const [userProfile, setUserProfile] = useState(null);
+    useEffect(() => {
+        const userId = localStorage.getItem("userId");
+        const fetchUser = async () => {
+            const response = await fetch(
+                `http://localhost:4000/user-api/get-user/${userId}`
+            );
+            const user = await response.json();
+            setUserProfile(user.payload);
+            if (user.payload.sex === "1") {
+                setSex("female")
+            }
+            if (user.payload.age) {
+                setAge(user.payload.age)
+            }
+            if (user.payload.height) {
+                setHeight(user.payload.height)
+            }
+            if (user.payload.weight) {
+                setWeight(user.payload.weight)
+            }
+        };
+
+        fetchUser();
+    }, []);
 
     const calculateCalories = () => {
         let bmr;
