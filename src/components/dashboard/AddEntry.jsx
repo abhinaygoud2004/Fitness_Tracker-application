@@ -12,11 +12,13 @@ import {
   Spacer,
   Heading,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 function AddEntry() {
   const SportOptions = [
     { value: "running", label: "Running" },
     { value: "cycling", label: "Cycling" },
+    { value: "walking", label: "Walking" },
   ];
   const [formData, setFormData] = useState({
     distance: "",
@@ -45,7 +47,9 @@ function AddEntry() {
       entries = JSON.parse(entriesString);
     }
     localStorage.setItem("entries", JSON.stringify([...entries, formData]));
+    nav('/dashboard')
   };
+  const nav = useNavigate()
   return (
     <div className="flex justify-center items-center h-[80vh]">
       <div className="p-5 w-1/2">
@@ -82,7 +86,7 @@ function AddEntry() {
               </FormControl>
               <div className="flex flex-row justify-between gap-4">
                 <FormControl>
-                  <FormLabel htmlFor="distance">Distance</FormLabel>
+                  <FormLabel htmlFor="distance">Distance (km)</FormLabel>
                   <Input
                     id="distance"
                     name="distance"
@@ -93,7 +97,7 @@ function AddEntry() {
                   />
                 </FormControl>
                 <FormControl>
-                  <FormLabel htmlFor="duration">Duration</FormLabel>
+                  <FormLabel htmlFor="duration">Duration (hr)</FormLabel>
                   <Input
                     id="duration"
                     name="duration"

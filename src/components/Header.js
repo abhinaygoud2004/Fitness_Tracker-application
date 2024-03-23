@@ -71,7 +71,7 @@ export default function Header() {
             </Button>
           </div> */}
 
-          <div className='flex items-center mx-5 ml-2'>
+          {/* <div className='flex items-center mx-5 ml-2'>
             <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/nutrition'}>
               Know Your Food
             </Button>
@@ -81,12 +81,8 @@ export default function Header() {
             <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/track-calories'}>
               Track Calories
             </Button>
-          </div>
-          <div className='flex items-center mx-5 ml-2'>
-            <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/profile'}>
-              Profile
-            </Button>
-          </div>
+          </div> */}
+
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -99,6 +95,7 @@ export default function Header() {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+
             <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/signup'}>
               SignUp
             </Button>
@@ -114,6 +111,11 @@ export default function Header() {
             direction={'row'}
             className='mr-3'
             spacing={6}>
+            <div className='flex items-center mx-5 ml-4'>
+              <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/profile'}>
+                Profile
+              </Button>
+            </div>
             <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} onClick={() => {
               localStorage.setItem('userId', 'undefined');
               localStorage.clear();

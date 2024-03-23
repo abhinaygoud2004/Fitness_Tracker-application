@@ -78,7 +78,7 @@ function Dashboard() {
   const getProgress = (title) => {
     if (progresses.length > 0) {
       const item = progresses.find((p) => p.name === title);
-      if (item) return Number(item.percent).toFixed(1);
+      if (item) return Math.min(Number(item.percent).toFixed(1),100);
       return 0;
     }
     return 0;

@@ -22,6 +22,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import AddEntry from "./components/dashboard/AddEntry";
 import Recommendations from "./components/Recommendations";
 import Landing from "./components/Landing";
+import HydrationReminder from "./components/HydrationReminder";
 
 function App() {
   const activityData = {
@@ -84,6 +85,7 @@ function App() {
                 <Route path="/nutrition" element={<NutritionTable />} />
                 <Route path="/exercise/:id" element={<ExerciseDetail />} />
                 <Route path="/add-entry" element={<AddEntry />} />
+                <Route path="/hydration" element={<HydrationReminder />} />
                 
               </Routes>
             </BrowserRouter>

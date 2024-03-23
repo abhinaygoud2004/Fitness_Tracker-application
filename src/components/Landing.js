@@ -52,25 +52,25 @@ export default function Landing() {
                     </Stack>
                 </Card>
                 <div className="card-container flex justify-between mb-2">
-                    <NavLink to="/nutrition">
-                    <Card1 title={"Know your Food"} subtitle={""} img={image1} />
-                    </NavLink>
-                    <NavLink to="/exercise">
-                    <Card1 title={"Fitness Training"} subtitle={""} img={image2} />
-                    </NavLink>
                     <NavLink to="/track-calories">
                     <Card1 title={"Track your calories"} subtitle={""} img={image3} />
                     </NavLink>
+                    <NavLink to="/nutrition">
+                    <Card1 title={"Know your Food"} subtitle={""} img={image1} />
+                    </NavLink>
+                    <NavLink to="/tracking">
+                    <Card1 title={"Weekly Progress"} subtitle={""} img={image2} />
+                    </NavLink>
                 </div>
                 <div className="card-container flex justify-between">
-                    <NavLink to="/">
-                    <Card1 title={"Integrated Chat Bot"} subtitle={""} img={image4} />
-                    </NavLink>
                     <NavLink to="/dashboard">
                     <Card1 title={"Monitor your progress on the Dashboard"} subtitle={""} img={image5} />
                     </NavLink>
                     <NavLink to="/recommendations">
                     <Card1 title={"Personalized Food Recommendations"} subtitle={""} img={image6} />
+                    </NavLink>
+                    <NavLink to="/">
+                    <Card1 title={"Integrated Chat Bot"} subtitle={""} img={image4} />
                     </NavLink>
                 </div>
             </div>
