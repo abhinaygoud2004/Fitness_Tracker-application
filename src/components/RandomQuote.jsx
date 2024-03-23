@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const quotes = [
   "The only bad workout is the one that didn't happen.",
@@ -82,22 +82,31 @@ const quotes = [
   "Your body can stand almost anything. It's your mind that you have to convince.",
   "Don't stop when you're tired. Stop when you're done.",
   "Strive for progress, not perfection.",
-  "Success isn't always about greatness. It's about consistency. Consistent hard work leads to success. Greatness will come."
+  "Success isn't always about greatness. It's about consistency. Consistent hard work leads to success. Greatness will come.",
 ];
-
 const RandomQuote = () => {
-  const [randomQuote, setRandomQuote] = useState('');
+  const [randomQuote, setRandomQuote] = useState("");
 
   const generateRandomQuote = () => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     setRandomQuote(quotes[randomIndex]);
   };
+
   useEffect(() => {
     generateRandomQuote();
   }, []);
+
+  const quoteContainerStyle = {
+    position: "fixed",
+    bottom: 0,
+    padding: "20px",
+    display: "flex",
+    left: '28%'
+  };
+
   return (
-    <div className=''>
-      <p>{randomQuote}</p>
+    <div style={quoteContainerStyle}>
+      <p className="cursor-pointer">{randomQuote}</p>
     </div>
   );
 };
