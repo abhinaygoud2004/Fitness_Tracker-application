@@ -34,16 +34,20 @@ function Goals() {
 
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    const cards = localStorage.getItem("cards");
-    setCards(JSON.parse(cards));
+    const c = localStorage.getItem("cards");
+    if (c) setCards(JSON.parse(c));
   }, []);
   return (
     <div>
-        <div>
-            {cards.map((card) => (
-              <Goal name={card.title} />
-            ))}
-        </div>
+      <div>
+        {cards.map((card) => (
+          <Goal
+            name={card.title}
+            setCards={setCards}
+            distance={card.distance}
+          />
+        ))}
+      </div>
       <Button
         onClick={() => {
           openModal();
@@ -51,7 +55,14 @@ function Goals() {
       >
         <Text>Add Goal</Text>
       </Button>
-      <Modal isOpen={isModalOpen} size={"xl"} onClose={closeModal}>
+      <Modal
+        isOpen={isModalOpen}
+        size={"xl"}
+        onClose={() => {
+          setSelectedCards([]);
+          closeModal();
+        }}
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Select Sport</ModalHeader>
@@ -65,8 +76,12 @@ function Goals() {
           <ModalFooter>
             <Button
               onClick={() => {
-                localStorage.setItem("cards", JSON.stringify(selectedCards));
-                setCards(selectedCards);
+                setCards([...cards, ...selectedCards]);
+                localStorage.setItem(
+                  "cards",
+                  JSON.stringify([...cards, ...selectedCards])
+                );
+                setSelectedCards([]);
                 closeModal();
               }}
             >

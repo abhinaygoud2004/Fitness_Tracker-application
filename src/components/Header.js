@@ -82,6 +82,11 @@ export default function Header() {
               Track Calories
             </Button>
           </div>
+          <div className='flex items-center mx-5 ml-2'>
+            <Button color={'white'} as={'a'} fontSize={'xl'} fontWeight={500} variant={'link'} href={'/profile'}>
+              Profile
+            </Button>
+          </div>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />

@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardHeader, Heading, CardBody, Text } from "@chakra-ui/react";
 const COLOR = "#1BA1FF";
 const SIZE = 50;
-const CardSelector = ({setSelectedCards,selectedCards}) => {
-    
+const CardSelector = ({ setSelectedCards, selectedCards }) => {
   const cards = [
-    { id: 1, title: "Running" },
-    { id: 2, title: "Cycling" },
-    { id: 3, title: "Walking" },
+    { id: 1, title: "Running", distance: 3 },
+    { id: 2, title: "Cycling", distance: 3 },
+    { id: 3, title: "Walking", distance: 3 },
   ];
   const svgs = {
     1: (
@@ -72,32 +71,41 @@ const CardSelector = ({setSelectedCards,selectedCards}) => {
     }
   };
 
+  const [cards_local, setCards_local] = useState([]);
+  useEffect(() => {
+    const c = localStorage.getItem("cards");
+    if (c) setCards_local(JSON.parse(c));
+  }, []);
+
   return (
     <div className="flex flex-row flex-wrap">
-      {cards.map((card) => (
-        <Card
-          direction={{ base: "column", sm: "row" }}
-          overflow="hidden"
-          variant="outline"
-          key={card.id}
-          onClick={() => handleCardSelect(card)}
-          borderColor={
-            selectedCards.find((obj) => obj.id == card.id)
-              ? "green"
-              : "lightgray"
-          }
-          margin={2}
-          padding={2}
-          borderWidth="2px"
-        >
-          <div className="shadow w-[60px] h-[60px] rounded-full flex justify-center items-center">
-            {svgs[card.id]}
-          </div>
-          <CardHeader>
-            <Heading size="md"> {card.title}</Heading>
-          </CardHeader>
-        </Card>
-      ))}
+      {cards.map(
+        (card) =>
+          !cards_local.find((obj) => obj.id == card.id) && (
+            <Card
+              direction={{ base: "column", sm: "row" }}
+              overflow="hidden"
+              variant="outline"
+              key={card.id}
+              onClick={() => handleCardSelect(card)}
+              borderColor={
+                selectedCards.find((obj) => obj.id == card.id)
+                  ? "green"
+                  : "lightgray"
+              }
+              margin={2}
+              padding={2}
+              borderWidth="2px"
+            >
+              <div className="shadow w-[60px] h-[60px] rounded-full flex justify-center items-center">
+                {svgs[card.id]}
+              </div>
+              <CardHeader>
+                <Heading size="md"> {card.title}</Heading>
+              </CardHeader>
+            </Card>
+          )
+      )}
     </div>
   );
 };
