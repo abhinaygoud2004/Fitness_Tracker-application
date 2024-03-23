@@ -73,6 +73,11 @@ export default function Landing() {
                     <Card1 title={"Integrated Chat Bot"} subtitle={""} img={image4} />
                     </NavLink>
                 </div>
+                <div className="card-container flex justify-between">
+                    <NavLink to="http://localhost:3001/">
+                    <Card1 title={"Monitor your progress on the Dashboard"} subtitle={""} img={image5} />
+                    </NavLink>
+                </div>
             </div>
         </div>
     );
