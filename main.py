@@ -13,8 +13,8 @@ from sklearn.pipeline import make_pipeline
 app = Flask(__name__)
 CORS(app)
 
-cal = pd.read_csv(r'C:\Users\agsna\Desktop\Webathon\fitness_tracker\calories.csv')
-exc = pd.read_csv(r'C:\Users\agsna\Desktop\Webathon\fitness_tracker\exercise.csv')
+cal = pd.read_csv(r'/Users/maturiabhinaygoud/fitness_tracker/calories.csv')
+exc = pd.read_csv(r'/Users/maturiabhinaygoud/fitness_tracker/exercise.csv')
 cal_data = pd.concat([exc, cal['Calories']], axis=1)
 
 cal_data.replace({"Gender": {'male': 0, 'female': 1}}, inplace=True)
