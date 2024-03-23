@@ -133,7 +133,7 @@ function Dashboard() {
                 {bmi}
               </Heading>
             )}
-            {bmi < 18.5 && bmi >= 25 && (
+            {(bmi < 18.5 || bmi >= 25) && (
               <Text>*the ideal BMI score should be 18.5 to 24.9</Text>
             )}
           </Box>
