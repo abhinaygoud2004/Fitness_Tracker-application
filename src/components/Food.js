@@ -1,4 +1,4 @@
-[
+export const foods=[
   {
     "id": 1,
     "name": "Greek Yogurt",
@@ -69,7 +69,7 @@
     "vitaminC": 0,
     "calcium": 56,
     "iron": 2,
-    "img": "https://img.freepik.com/free-photo/omelette-with-broccoli-tomatoes-red-onions-dark-table-italian-frittata-with-vegetables_2829-20241.jpg?w=2000&t=st=1701495924~exp=1701496524~hmac=8fe051d833defdf0a12ab7dc9b85a079fbc8d31add6dc614d93a5253df7aab03"
+    "img": "https://img.freepik.com/free-photo/omelette-with-broccoli-tomatoes-red-onions-dark-table-italian-frittata-with-vegetables_2829-20241.jpg?t=st=1711174747~exp=1711178347~hmac=66d2119ccb5cb80b9cf0483ce1b83e21771e9dc0de75a614f70ad316e162d95f&w=1060"
   },
   {
     "id": 5,

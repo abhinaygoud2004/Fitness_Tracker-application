@@ -20,6 +20,7 @@ import Header from "./components/Header";
 import { Toaster } from "react-hot-toast";
 import Dashboard from "./components/dashboard/Dashboard";
 import AddEntry from "./components/dashboard/AddEntry";
+import Recommendations from "./components/Recommendations";
 
 function App() {
   const activityData = {
@@ -73,6 +74,7 @@ function App() {
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/tracking" element={<FitnessTracking />} />
                 <Route path="/track-calories" element={<HomeScreen />} />
+                <Route path="/recommendations" element={<Recommendations />} />
                 <Route
                   path="/daily-calorie-calculator"
                   element={<DailyCalorieIntake />}
